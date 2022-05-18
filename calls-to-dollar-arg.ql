@@ -5,7 +5,7 @@
 
 import javascript
 
-from CallExpr dollarCall, Expr expression
-where dollarCall.getCalleeName() = "$" and
-        expression = dollarCall.getArgument(0)
-select dollarCall, expression
+from CallExpr dollarCall, Expr argExpr
+where   dollarCall.getCalleeName() = "$" and
+        argExpr = dollarCall.getArgument(0)
+select argExpr
